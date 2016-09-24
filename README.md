@@ -30,12 +30,13 @@ hooks:
           - git clone https://github.com/discourse/discourse-bbcode-color.git
 ```
 
-* Rebuild the container
+* Rebuild the container (This will bring your forum offline until you restart Docker)
 
 ```shell
 cd /var/discourse
 git pull
 ./launcher rebuild app
+sudo service docker restart
 ```
 
 * Re-render all posts now that the plugin is installed. This won't create any extra revisions.
